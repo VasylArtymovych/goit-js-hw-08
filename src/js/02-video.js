@@ -15,6 +15,11 @@
         console.log('title:', title);
     });
 
-    let savedPlayTime = JSON.parse(localStorage.getItem(STORAGE_KEY_PLAYTIME));
-
-    player.setCurrentTime(savedPlayTime);
+    setCurrentTime();
+    function setCurrentTime(){
+        const savedTime = localStorage.getItem(STORAGE_KEY_PLAYTIME);
+        if(savedTime){
+            const convertSavedTime = JSON.parse(savedTime);
+            player.setCurrentTime(convertSavedTime);
+        }
+    }
