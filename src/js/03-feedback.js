@@ -1,4 +1,6 @@
+//* import throttle packege to prooject:
 import throttle from "lodash.throttle";
+
 const refs = {
     form: document.querySelector('.feedback-form'),
     inputEmail: document.querySelector('input'),
@@ -18,11 +20,11 @@ function onInputChange(evt){
     objSavedData.email = refs.inputEmail.value;
     objSavedData.message = refs.textarea.value;
     localStorage.setItem(STORAGE_KEY, JSON.stringify(objSavedData));
-}
+};
 
 function onFormSubmit(evt){
     evt.preventDefault();
-
+    
     const email = evt.currentTarget.elements.email.value;
     const message = evt.currentTarget.elements.message.value;
 
@@ -31,10 +33,11 @@ function onFormSubmit(evt){
     }
 
     console.log({email, message});
+
     evt.currentTarget.reset();
+
     localStorage.removeItem(STORAGE_KEY);
-    
-}
+};
 
 function fillerFormFields(){
     const storageData = localStorage.getItem(STORAGE_KEY);
@@ -44,4 +47,4 @@ function fillerFormFields(){
         refs.inputEmail.value = convertStorageData.email;
         refs.textarea.value = convertStorageData.message;
     }
-}
+};

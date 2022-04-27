@@ -1,6 +1,8 @@
+    //* import throttle packege to prooject:
     import throttle from "lodash.throttle";
 
     const iframe = document.querySelector('iframe');
+    
     const player = new Vimeo.Player(iframe);
     const STORAGE_KEY_PLAYTIME = "videoplayer-current-time";
 

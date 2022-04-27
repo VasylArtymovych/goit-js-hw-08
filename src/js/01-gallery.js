@@ -1,7 +1,8 @@
-// Add imports above this line
+// import gallery-items:
 import { galleryItems } from './gallery-items';
-// Change code below this line
+// import simpleLightbox packege:
 import SimpleLightbox from "simplelightbox";
+// import css code to use in project:
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 const galleryRef = document.querySelector('.gallery');
@@ -19,6 +20,3 @@ function createGalleryElement({preview, original, description}) {
 
 let gallery = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250, });
 
-gallery.on(() => {
-    gallery.next();
-});
